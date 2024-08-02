@@ -1,9 +1,9 @@
 const express = require('express');
 
 
-const UserController = require('../src/controllers/UserController');
-const ProposalController = require('../src/controllers/ProposalController');
-const MVPProposalController = require('../src/controllers/MVPProposalController');
+const UserController = require('./controllers/UserController');
+const ProposalController = require('./controllers/ProposalController');
+const MVPProposalController = require('./controllers/MVPProposalController');
 
 //const DashboardController = require('../src/controllers/DashboardController');
 
