@@ -21,7 +21,7 @@ app.use(routes);
 // Todas as rotas devem servir o index.html do build
  
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'public', 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, '..', 'public', 'src', 'index.js'));
 }); 
 {/* 
 app.get('/', (req, res, next) => {
