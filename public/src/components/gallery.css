@@ -1,0 +1,170 @@
+.div-out {
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1999;
+    top: 0;
+    transition: opacity .4s ease, visibility .4s ease, transform .5s ease-in-out;
+    
+}
+
+.it {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    height: 3rem;
+    width: 3rem;
+    padding: 5px;
+    background-color: rgba(0,0,0, 0.4);
+    color:  #fff;
+    cursor: pointer;
+}
+
+.itnext {
+    position: fixed;
+    bottom: 50%;
+    right: 10%;
+    height: 3rem;
+    width: 3rem;
+    padding: 5px;
+    background-color: rgba(0,0,0, 0.4);
+    color:  #fff;
+    cursor: pointer;
+}
+
+.itprevious {
+    position: fixed;
+    bottom: 50%;
+    left: 10%;
+    height: 3rem;
+    width: 3rem;
+    padding: 5px;
+    background-color: rgba(0,0,0, 0.4);
+    color: blue;
+    cursor: pointer;  
+}
+
+.img-out {
+    width: auto;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.img-responsive {
+    width: 100%;
+    height: 90%;
+    display: block;
+    cursor: pointer;
+}
+
+
+
+.gallery-global {
+
+  width: 1300px;
+  height: 100%;
+  padding: 10px;
+
+  margin-top: 25vh;
+}
+
+
+
+
+
+@media (max-width: 991px){
+    .gallery-global{
+        width: 400px;
+        padding-left: 5%;      
+    }
+}
+
+@media (max-width: 480px){
+    .gallery-global{
+        width: 400px;
+        padding-left: 5%; 
+    }
+}
+
+@media (min-width: 2000px){
+    .gallery-global{
+        width: 2300px;
+        padding-left: 0; 
+    }
+}
+
+/* model*/
+
+.modelLeft {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    transition: opacity .4s ease, visibility .4s ease, transform .5s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0);
+    overflow: hidden;
+    z-index: 999;
+}
+
+
+.modelCenter {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    transition: opacity .4s ease, visibility .4s ease, transform .5s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0);
+    overflow: hidden;
+    z-index: 999;
+}
+
+
+
+.model.open{
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.model img {
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    display: block;
+    line-height: 0;
+    box-sizing: border-box;
+    padding: 20px 0 20px;
+    margin: 0 auto;
+}
+
+.model.open svg{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    height: 3rem;
+    width: 3rem;
+    padding: 5px;
+    background-color: rgba(0,0,0, 0.4);
+    color: #fff;
+    cursor: pointer;
+}

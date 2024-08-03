@@ -33,7 +33,7 @@ mongoose.connect('mongodb+srv://studiomprojeto3d:studiomprojeto3d@m3d.wzn7h7u.mo
 .catch(err => console.error('Erro ao conectar ao MongoDB:', err));
 
 // Iniciar o servidor
-const port = process.env.PORT || 4444;
+const port = process.env.PORT_ADMIN || 4444;
 app.listen(port, () => {
   console.log(`Servidor rodando na porta ${port}`);
 });
