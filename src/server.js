@@ -19,13 +19,14 @@ app.use(cors());
 app.use(routes);
 
 // Todas as rotas devem servir o index.html do build
-{/* 
+ 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
-}); */}
+  res.sendFile(path.join(__dirname, '..', 'public', 'public', 'index.html'));
+}); 
+{/* 
 app.get('/', (req, res, next) => {
   res.send(`Aplicaçao xxxxl node js rolou?`);
-});
+});*/}
 
 // Conectar ao MongoDB
 mongoose.connect('mongodb+srv://studiomprojeto3d:studiomprojeto3d@m3d.wzn7h7u.mongodb.net/?retryWrites=true&w=majority&appName=m3d')
