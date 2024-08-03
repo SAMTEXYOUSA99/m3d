@@ -21,6 +21,7 @@ import ProposalCInterno from '../src/pages/ProposalCInterno';
 import ProposalCExterno from '../src/pages/ProposalCExterno';
 import ProposalCInternoExterno from '../src/pages/ProposalCInternoExterno';
 
+const port = process.env.PORT || 3000;
 
 function App() {
   return (
