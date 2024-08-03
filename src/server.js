@@ -7,21 +7,23 @@ const path = require('path');
 
 const app = express();
 
-// Middleware para servir arquivos estáticos
-app.use(express.static(path.join(__dirname, '..', 'public')));
+
 
 // Middleware para parsear JSON
 app.use(bodyParser.json());
 app.use(express.json());
 app.use(cors());
 
+
 // Configuração das rotas
 app.use(routes);
 
+// Middleware para servir arquivos estáticos
+app.use(express.static(path.join(__dirname, '..', 'public', 'build')));
+
 // Todas as rotas devem servir o index.html do build
- 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'public', 'src', 'index.js'));
+  res.sendFile(path.join(__dirname, '..', 'public', 'build', 'index.html'));
 }); 
 {/* 
 app.get('/', (req, res, next) => {
