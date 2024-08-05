@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exemplo de PDF</title>
+    <style>
+        body {
+            
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #fff;
+        }
+        .faixa{
+            width: 100%;
+            height: 15%;
+            background-color: #545454;
+            padding-top: 3%;
+            padding-left: 3%;
+        }
+        .containerdet{
+           
+            width: 100%;
+            height: 622.7px;
+            padding-top: 5%;
+            padding-left: 5%;
+
+           
+        }
+        .services{
+            width: 80%;
+            height: 355px;
+         
+        }
+
+        .services p{
+            font-size: 20px;
+        }
+    </style>
+     
+</head>
+<body>
+    <div class="faixa"><h1>DETALHES DO ORÇAMENTO</h1></div>
+    <div class="containerdet">
+        <h2>Projeto: {{projectName}}<br/>
+            Cliente: {{clientName}}<br/>
+            Celular: {{clientPhone}}<br/>
+            Prazo: {{projectDeadline}} dias úteis</h2><br/>
+        <div class="services">
+            <p>{{projectModelSecond}}</p>
+        </div>  
+        
+        <img src="logocolorhorizontal" alt="" class="detailslogo" />  
+    </div>      
+</body>
+</html>

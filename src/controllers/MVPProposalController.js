@@ -1,5 +1,5 @@
 const MVPProposal = require('../models/MVPProposal');
-const PDFService = require('../services/PDFService');
+const PDFServiceA = require('../services/PDFServiceA');
 const PDFServiceC = require('../services/PDFServiceC');
 
 module.exports = {
@@ -64,7 +64,7 @@ module.exports = {
 
             if (projectModelType === 'A') {
                 // Gerar o PDF usando o serviço dedicado
-                const pdfBufferA = await PDFService.generatePDF(mvpproposal);
+                const pdfBufferA = await PDFServiceA.generatePDF(mvpproposal);
 
                  // Definir headers para a resposta do PDF
                 res.setHeader('Content-Type', 'application/pdf');

@@ -5,19 +5,14 @@ import { useNavigate } from 'react-router-dom';
 import headerunic from '../m3dasset/headerunic.png';
 import FooterM3D from '../components/footerm3d'
 import logom3dstudiowhite from '../m3dasset/logom3dstudiowhite.png';
+import ProgressBar from '../components/progressbar';
 
-import modelain from '../m3dasset/backgroundblockhome.jpg'
-import modelaexin from '../m3dasset/backgroundblockhome.jpg'
-import modelaex from '../m3dasset/backgroundblockhome.jpg'
-
-import modelcex from '../m3dasset/backgroundblockhome.jpg'
-import modelcexin from '../m3dasset/backgroundblockhome.jpg'
-import modelcin from '../m3dasset/backgroundblockhome.jpg'
   
 const ProposalCInternoExterno = () => {
   const navigate = useNavigate();
+  const [progress, setProgress] = useState(0);
+  const [showPopup, setShowPopup] = useState(false);
 
-  const [projectModel, setProjectModel] = useState('');
   let [currentDate, setCurrentDate] = useState('');
   const [projectServices, setProjectServices] = useState([]);
   const [clientName, setClientName] = useState('');
@@ -123,7 +118,7 @@ const ProposalCInternoExterno = () => {
       } else if (valor >= 6) {
         resultadoCalculo = valor * 8 * 37;
       }
-      setResultado(resultadoCalculo.toFixed(2)); // Arredondando para 2 casas decimais
+      setResultado(resultadoCalculo.toFixed(0)); // Arredondando para 2 casas decimais
       setProjectPrice(resultadoCalculo);
     
     } else {
@@ -149,6 +144,19 @@ const ProposalCInternoExterno = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    
+    setShowPopup(true);
+    // Simulação de atualização de progresso
+    const interval = setInterval(() => {
+      setProgress((prevProgress) => {
+        if (prevProgress >= 100) {
+          clearInterval(interval);
+          setShowPopup(false);
+          return 100;
+        }
+        return prevProgress + 10;
+      });
+    }, 1000);
 
     currentDate = new Date().toLocaleDateString();   
 
@@ -177,6 +185,11 @@ const ProposalCInternoExterno = () => {
     link.href = url;
     link.setAttribute('download', 'form_data.pdf');
     document.body.appendChild(link);
+
+    if (data.success) {
+      setProgress(100);
+    }
+
     link.click();
     
     // Remove o link e revoga o URL do objeto Blob
@@ -184,6 +197,7 @@ const ProposalCInternoExterno = () => {
     window.URL.revokeObjectURL(url);
 
     // Redireciona para uma página de sucesso ou conforme necessário
+   
     navigate('/success');
   } catch (error) {
     console.error('Erro ao enviar os dados:', error);
@@ -313,7 +327,12 @@ const ProposalCInternoExterno = () => {
                 <button type="submit" className='send-btn'>GERAR ORÇAMENTO</button>
 
         </form>
-
+        
+        {showPopup && (
+        <div className="popup">
+          <ProgressBar progress={progress} />
+        </div>
+      )}
     </div>
     <FooterM3D />
     </div>

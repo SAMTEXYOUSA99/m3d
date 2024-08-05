@@ -124,7 +124,7 @@ const ProposalCExterno = () => {
       } else if (valor >= 6) {
         resultadoCalculo = valor * 8 * 37;
       }
-      setResultado(resultadoCalculo.toFixed(2)); // Arredondando para 2 casas decimais
+      setResultado(resultadoCalculo.toFixed(0)); // Arredondando para 2 casas decimais
       setProjectPrice(resultadoCalculo);
     
     } else {

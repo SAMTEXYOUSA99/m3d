@@ -1,8 +1,6 @@
 const express = require('express');
 
-
 const UserController = require('./controllers/UserController');
-const ProposalController = require('./controllers/ProposalController');
 const MVPProposalController = require('./controllers/MVPProposalController');
 
 //const DashboardController = require('../src/controllers/DashboardController');
@@ -16,8 +14,7 @@ routes.post('/mvpproposals/ainextern', MVPProposalController.store);
 routes.post('/mvpproposals/cintern', MVPProposalController.store);
 routes.post('/mvpproposals/cextern', MVPProposalController.store);
 routes.post('/mvpproposals/cinextern', MVPProposalController.store);
-//routes.get('/proposal', ProposalController.index);
-routes.post('/proposals', ProposalController.store);
+
 
 //routes.get('/dashboard', DashboardController.show);
 

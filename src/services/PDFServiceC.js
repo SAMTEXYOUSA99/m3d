@@ -4,34 +4,33 @@ const pdf = require('html-pdf');
 const base64Img = require('base64-img');
 
 async function generatePDF(mvpproposal) {
-    try {
+    try { 
 
         //caminho de páginas
-        const coverPath = path.join(__dirname, '../../public/modelc/capa.html');
-        const companyPath = path.join(__dirname, '../../public/modelc/company.html');
-        const port1Path = path.join(__dirname, '../../public/modelc/portfolio1.html');
-        const port2Path = path.join(__dirname, '../../public/modelc/portfolio2.html');
-        const port3Path = path.join(__dirname, '../../public/modelc/portfolio3.html');
-        const port4Path = path.join(__dirname, '../../public/modelc/portfolio4.html');
-        const port5Path = path.join(__dirname, '../../public/modelc/portfolio5.html');
-        const stepsPath = path.join(__dirname, '../../public/modelc/steps.html');       
-        const details01Path = path.join(__dirname, '../../public/modelc/details01.html');
-        const details02Path = path.join(__dirname, '../../public/modelc/details02.html');
-        const details03Path = path.join(__dirname, '../../public/modelc/details03.html');
-        const details04Path = path.join(__dirname, '../../public/modelc/details04.html');
-        const finalPath = path.join(__dirname, '../../public/modelc/final.html'); 
+        const coverPath = path.join(__dirname, '../../pdfpublic/modelc/capa.html');
+        const companyPath = path.join(__dirname, '../../pdfpublic/modelc/company.html');
+        const port1Path = path.join(__dirname, '../../pdfpublic/modelc/portfolio1.html');
+        const port2Path = path.join(__dirname, '../../pdfpublic/modelc/portfolio2.html');
+        const port3Path = path.join(__dirname, '../../pdfpublic/modelc/portfolio3.html');
+        const port4Path = path.join(__dirname, '../../pdfpublic/modelc/portfolio4.html');
+        const port5Path = path.join(__dirname, '../../pdfpublic/modelc/portfolio5.html');
+        const stepsPath = path.join(__dirname, '../../pdfpublic/modelc/steps.html');       
+        const details01Path = path.join(__dirname, '../../pdfpublic/modelc/details01.html');
+        const details02Path = path.join(__dirname, '../../pdfpublic/modelc/details02.html');
+        const details03Path = path.join(__dirname, '../../pdfpublic/modelc/details03.html');
+        const details04Path = path.join(__dirname, '../../pdfpublic/modelc/details04.html');
+        const finalPath = path.join(__dirname, '../../pdfpublic/modelc/final.html'); 
        
         //caminho de imagens
-        const imagePath = path.join(__dirname, '../../public/images/capa.png');
-        const logoPath = path.join(__dirname, '../../public/images/logocolor.png');
-        const logoHorizontalPath = path.join(__dirname, '../../public/images/logocolorhorizontal.png');
-        const imgPortC01Path = path.join(__dirname, '../../public/images/portfolioc01.jpg');
-        const imgPortC02Path = path.join(__dirname, '../../public/images/portfolioc02.jpg');
-        const imgPortC03Path = path.join(__dirname, '../../public/images/portfolioc03.jpg');
-        const imgPortC04Path = path.join(__dirname, '../../public/images/portfolioc04.jpg');
-        const imgPortC05Path = path.join(__dirname, '../../public/images/portfolioc05.jpg');
-        const finalImgPath = path.join(__dirname, '../../public/images/final.png');
-        const companyImagePath = path.join(__dirname, '../../public/images/companypage.png');
+        const logoPath = path.join(__dirname, '../../pdfpublic/images/logocolor.png');
+        const logoHorizontalPath = path.join(__dirname, '../../pdfpublic/images/logocolorhorizontal.png');
+        const imgPortC01Path = path.join(__dirname, '../../pdfpublic/images/portfolioc01.jpg');
+        const imgPortC02Path = path.join(__dirname, '../../pdfpublic/images/portfolioc02.jpg');
+        const imgPortC03Path = path.join(__dirname, '../../pdfpublic/images/portfolioc03.jpg');
+        const imgPortC04Path = path.join(__dirname, '../../pdfpublic/images/portfolioc04.jpg');
+        const imgPortC05Path = path.join(__dirname, '../../pdfpublic/images/portfolioc05.jpg');
+        const finalImgPath = path.join(__dirname, '../../pdfpublic/images/final.png');
+        const companyImagePath = path.join(__dirname, '../../pdfpublic/images/companypage.png');
 
         //leitura de páginas
         let cover = fs.readFileSync(coverPath, 'utf8');
@@ -108,7 +107,6 @@ async function generatePDF(mvpproposal) {
                            
         
         // Converter a imagem para Base64
-        const base64Image = base64Img.base64Sync(imagePath);
         const bs64ImgCompanyImg = base64Img.base64Sync(companyImagePath);
         const bs64ImgPortc01 = base64Img.base64Sync(imgPortC01Path);
         const bs64ImgPortc02 = base64Img.base64Sync(imgPortC02Path);
@@ -140,19 +138,6 @@ async function generatePDF(mvpproposal) {
             orientation: 'landscape',
              base: `file://${path.resolve(__dirname, '../../public')}/`
         };
-
-
-        const style = `
-            <style>
-                @font-face {
-                    font-family: 'Chillax-Variable';
-                    src: url('Chillax-Variable.ttf') format('truetype');
-                }
-                body {
-                    font-family: 'Chillax-Variable', sans-serif;
-                }
-            </style>
-        `;
 
         let combinedHTML;
 
