@@ -1,2 +1,0 @@
-(()=>{var o={252:o=>{"use strict";o.exports=require("express")}},r={};const e=function e(t){var s=r[t];if(void 0!==s)return s.exports;var i=r[t]={exports:{}};return o[t](i,i.exports,e),i.exports}(252),t=e(),s={NODE_ENV:"production",PUBLIC_URL:"",WDS_SOCKET_HOST:void 0,WDS_SOCKET_PATH:void 0,WDS_SOCKET_PORT:void 0,FAST_REFRESH:!0}.PORT||3e3;t.listen(s,(()=>{console.log(`API pronta pra uso na porta: ${s}`)})),t.get("/",((o,r,e)=>{r.json({title:"api em node.js"})}))})();
-//# sourceMappingURL=main.9af839dd.js.map
