@@ -25,14 +25,14 @@ async function generatePDF(mvpproposal) {
         
         const logoPath = path.join(__dirname, '../../pdfpublic/images/modela/logocolor.png');
         const logoHorizontalPath = path.join(__dirname, '../../pdfpublic/images/modela/logocolorhorizontal.png');
-        const imgPortC01Path = path.join(__dirname, '../../pdfpublic/images/modela/portfolioa01.jpg');
+        const imgPortC01Path = path.join(__dirname, '../../pdfpublic/images/modela/portfolioa01.png');
         const imgPortC02Path = path.join(__dirname, '../../pdfpublic/images/modela/portfolioa02.jpg');
         const imgPortC03Path = path.join(__dirname, '../../pdfpublic/images/modela/portfolioa03.jpg');
         const imgPortC04Path = path.join(__dirname, '../../pdfpublic/images/modela/portfolioa04.jpg');
         const imgPortC05Path = path.join(__dirname, '../../pdfpublic/images/modela/portfolioa05.jpg');
         const finalImgPath = path.join(__dirname, '../../pdfpublic/images/modela/final.png');
         const companyImagePath = path.join(__dirname, '../../pdfpublic/images/modela/companypage.png');
-
+ 
         //leitura de páginas
         let cover = fs.readFileSync(coverPath, 'utf8');
         let company = fs.readFileSync(companyPath, 'utf8');
