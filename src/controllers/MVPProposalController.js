@@ -1,6 +1,7 @@
 const MVPProposal = require('../models/MVPProposal');
 const PDFServiceA = require('../services/PDFServiceA');
 const PDFServiceC = require('../services/PDFServiceC');
+const other = require('../services/mkpdfservicec');
 
 module.exports = {
     async store(req, res) {
@@ -72,7 +73,7 @@ module.exports = {
                 res.send(pdfBufferA);
             } else if (projectModelType === 'C') {
                 // Gerar o PDF usando o serviço dedicado
-                const pdfBufferC = await PDFServiceC.generatePDF(mvpproposal);
+                const pdfBufferC = await other.generatePDF(mvpproposal);
 
                  // Definir headers para a resposta do PDF
                 res.setHeader('Content-Type', 'application/pdf');
