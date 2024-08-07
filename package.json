@@ -1,7 +1,7 @@
 {
   "name": "backendm3d",
   "version": "1.0.0",
-  "main": "index.js",
+  "homepage": ".",
   "license": "MIT",
   "scripts": {
     "dev": "nodemon src/server.js"
