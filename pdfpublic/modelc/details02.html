@@ -3,31 +3,62 @@
 <head>
     <title>Exemplo de PDF</title>
     <style>
-        .total{
-            background-color: aqua;
-            margin-top: +8896px;
-            z-index: 1000;
+        body {
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #fff;
+        }
+        .faixa{
+            width: 100%;
+            height: 90px;
+            background-color: #545454;
+            padding-top: 1%;
+            padding-left: 3%;
+        }
+        .containerdetailsfirst{
+            width: 100%;
+            height: 650px;
+            padding-top: 5%;
+            padding-left: 5%;
+        }
+      
+        .sectionservices{
+            display: flex;
+            width: 68%;
+            height: 330px;
+            margin-top: 1%;
+        }
+        .psecond {
+            font-size: 20px;
+            color: #545454;
+        }
+        .clientsdata {
+            font-weight: 600;
+        }
+        .detailslogo{
+            width: 15%;
+            height: 13%;
+            margin-left: 74%;
+            margin-top: 6%;
+            
         }
     </style>
      
 </head>
 <body>
-    <div class="total">
-
-   
-    <div  ><h1>DETALHES DO ORÇAMENTO</h1></div>
-    <div>
-        <h2 >Projeto: {{projectName}}<br/>
+    <div class="faixa"><h1 class="fdettit">DETALHES DO ORÇAMENTO</h1></div>
+    <div class="containerdetailsfirst">
+        <h2 class="clientsdata">Projeto: {{projectName}}<br/>
             Cliente: {{clientName}}<br/>
             Celular: {{clientPhone}}<br/>
-            Prazo: {{projectDeadline}} dias úteis</h2><br/>
-        <div>
-            <p>{{projectModelSecond}}</p>
-        </div>  
-        
-        <!-- <img src="logocolorhorizontal" alt="" class="detailslogo" />  -->
-    </div>
+            Prazo: {{projectDeadline}} dias úteis</h2>
 
-</div>
+        <div class="sectionservices"><p class="psecond">{{projectModelSecond}}</p></div>
+        
+        <img src="logocolorhorizontal" alt="" class="detailslogo" />  
+    </div>     
 </body>
 </html>

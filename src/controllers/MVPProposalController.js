@@ -2,6 +2,7 @@ const MVPProposal = require('../models/MVPProposal');
 const PDFServiceA = require('../services/PDFServiceA');
 const PDFServiceC = require('../services/PDFServiceC');
 const other = require('../services/mkpdfservicec');
+const othera = require('../services/mkpdfservicea');
 
 module.exports = {
     async store(req, res) {
@@ -63,24 +64,26 @@ module.exports = {
                 projectModelType
             });
 
+            const pdfFileName = `${clientName} - ORÇAMENTO PROPOSTA DE INVESTIMENTO M3D STUDIO - ${projectName}.pdf`;
+            
             if (projectModelType === 'A') {
                 // Gerar o PDF usando o serviço dedicado
-                const pdfBufferA = await PDFServiceA.generatePDF(mvpproposal);
+                const pdfBufferA = await othera.generatePDF(mvpproposal);
 
                  // Definir headers para a resposta do PDF
                 res.setHeader('Content-Type', 'application/pdf');
-                res.setHeader('Content-Disposition', `attachment; filename="${mvpproposal._id}.pdf"`);
+                res.setHeader('Content-Disposition', `attachment; filename="${pdfFileName}"`);
                 res.send(pdfBufferA);
             } else if (projectModelType === 'C') {
                 // Gerar o PDF usando o serviço dedicado
                 const pdfBufferC = await other.generatePDF(mvpproposal);
-
+                console.log('nome arquivo:', pdfFileName);
                  // Definir headers para a resposta do PDF
                 res.setHeader('Content-Type', 'application/pdf');
-                res.setHeader('Content-Disposition', `attachment; filename="${mvpproposal._id}.pdf"`);
+                res.setHeader('Content-Disposition', `attachment; filename="${pdfFileName}"`);
                 res.send(pdfBufferC);
             }
-           
+            
 
         } catch (error) {
             console.error('Error saving data and generating PDF:', error);

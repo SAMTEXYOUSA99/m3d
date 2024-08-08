@@ -145,7 +145,7 @@ async function generatePDF(mvpproposal) {
             console.log('Nenhum campo preenchido');
 
         } else if (mvpproposal.projectModelFirst === '' && mvpproposal.projectModelSecond !== '') {
-            combinedHTML = `${coverWithImages}${companyWithImage}${portc01}${portc02}${portc03}${portc04}${portc05}${details02WithLogo}${details03WithLogo}${details04WithLogo}${finalImg}`;
+            combinedHTML = `${coverWithImages}${companyWithImage}${portc01}${portc02}${portc03}${portc04}${portc05}${details02WithLogo}${finalImg}`;
             console.log('Project Model First vazio');
 
         } else if (mvpproposal.projectModelFirst !== '' && mvpproposal.projectModelSecond === '') {

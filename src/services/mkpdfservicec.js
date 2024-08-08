@@ -130,9 +130,31 @@ async function generatePDF(mvpproposal) {
         const portc05 = port5.replace('src="portc05"', `src="${bs64ImgPortc05}"`);
         const finalImg = final.replace('src="final"', `src="${bs64FinalImg}"`);
 
-        const completeHTML = coverWithImages + companyWithImage + portc01 + portc02 + portc03 + portc04 + portc05 + details01WithLogo + details02WithLogo + details03WithLogo + details04WithLogo + finalImg;
+        let combinedHTML;
 
-        await page.setContent(completeHTML);
+        if (mvpproposal.projectModelFirst === '' && mvpproposal.projectModelSecond === '') {
+            console.log('Nenhum campo preenchido');
+        
+        } else if (mvpproposal.projectModelFirst === '' && mvpproposal.projectModelSecond !== '') {
+            combinedHTML = coverWithImages + companyWithImage + portc01 + portc02 + portc03 + portc04 + portc05 + details02WithLogo + finalImg;
+            console.log('Project Model First vazio');
+        
+        } else if (mvpproposal.projectModelFirst !== '' && mvpproposal.projectModelSecond === '') {
+            combinedHTML = coverWithImages + companyWithImage + portc01 + portc02 + portc03 + portc04 + portc05 + details01WithLogo + details03WithLogo + details04WithLogo + finalImg;
+            console.log('Project Model Second vazio');
+        
+        } else if (mvpproposal.projectModelFirst !== '' && mvpproposal.projectModelSecond !== '') {
+            combinedHTML = coverWithImages + companyWithImage + portc01 + portc02 + portc03 + portc04 + portc05 + details01WithLogo + details02WithLogo + details03WithLogo + details04WithLogo + finalImg;
+            console.log('Todos preenchidos');
+        
+        } else {
+            combinedHTML = null;  // Caso não se enquadre em nenhuma das condições
+            console.log('Não definido corretamente');
+        }
+        
+        // Agora você pode usar o `combinedHTML` com Puppeteer como quiser
+        
+        await page.setContent(combinedHTML);
 
         return new Promise((resolve, reject) => {
             page.pdf({ format: 'A4', printBackground: true, landscape: true }).then(buffer => {

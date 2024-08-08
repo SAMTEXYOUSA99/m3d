@@ -11,48 +11,22 @@
         h1 {
             color: #fff;
         }
-        h2{
-            margin-top: -15px;
-            color: #545454;
-            font-weight: 600;
-        }
-        .faixadet{
+        .faixa{
             width: 100%;
-            height: 15%;
+            height: 90px;
             background-color: #545454;
             padding-top: 3%;
             padding-left: 3%;
         }
-        .containerdetailsthird{
-        
+        .clientsdata {
+            font-weight: 600;
+        }
+        .containerdetailsfirst{
             width: 100%;
-            height: 622.7px;
-            margin-top: 1800px;
-            background-color: red;
+            height: 660px;
+            
             padding-top: 5%;
             padding-left: 5%;
-            display: flex;
-            flex-direction: column;
-        }
-     
-
-        .gradientlinedet{
-            height: 4px;
-            background: linear-gradient(to right, #FFE42D, #E84033);
-            width: 750px;
-            position: absolute;
-            z-index: 99;
-            margin-left: 30px;
-            margin-top: -11px;
-        }
-
-        .containerdet h1{
-            color: #545454;
-            letter-spacing: .05em;
-            margin-left: 30px;
-        }
-        h3, p{
-            margin-left: 33px;
         }
         p {
             font-size: 18px;
@@ -70,17 +44,17 @@
             color: #545454;
 
         }
+       
     </style>
      
 </head>
 <body>
-    <div class="faixadet"><h1>DETALHES DO ORÇAMENTO</h1></div>
-    <div class="containerdetailsthird">
-        <h2>Projeto: {{projectName}}<br/>
+    <div class="faixa"><h1 class="fdettit">DETALHES DO ORÇAMENTO</h1></div>
+    <div class="containerdetailsfirst">
+        <h2 class="clientsdata">Projeto: {{projectName}}<br/>
             Cliente: {{clientName}}<br/>
             Celular: {{clientPhone}}<br/>
             Prazo: {{projectDeadline}} dias úteis</h2>
-            <br/>
             
             <div class="sectionservices">
                 <p>
@@ -90,7 +64,7 @@
                 </p>
             </div>
 
-            <!-- <img src="logocolorhorizontal" alt="" class="detailslogo" />  -->    
+             <img src="logocolorhorizontal" alt="" class="detailslogo" /> 
     </div>
     
 </body>

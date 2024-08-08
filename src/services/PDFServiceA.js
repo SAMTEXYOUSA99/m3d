@@ -32,7 +32,7 @@ async function generatePDF(mvpproposal) {
         const imgPortC05Path = path.join(__dirname, '../../pdfpublic/images/modela/portfolioa05.jpg');
         const finalImgPath = path.join(__dirname, '../../pdfpublic/images/modela/final.png');
         const companyImagePath = path.join(__dirname, '../../pdfpublic/images/modela/companypage.png');
- 
+
         //leitura de páginas
         let cover = fs.readFileSync(coverPath, 'utf8');
         let company = fs.readFileSync(companyPath, 'utf8');
@@ -49,7 +49,7 @@ async function generatePDF(mvpproposal) {
         let final = fs.readFileSync(finalPath, 'utf8');
 
         let servicesList;
-
+        console.log('preco:', mvpproposal.projectPrice);
         const priceparc = mvpproposal.projectPrice / 2;
         console.log(priceparc);
       
