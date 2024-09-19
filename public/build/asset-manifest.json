@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.8be190c2.css",
-    "main.js": "./static/js/main.9a560049.js",
+    "main.js": "./static/js/main.7e7ccae2.js",
     "static/media/BISTROBEACH916.webm": "./static/media/BISTROBEACH916.9fa9d4c52c15e13670b6.webm",
     "static/media/videositeatualizado.webm": "./static/media/videositeatualizado.c6ddb12c147883917435.webm",
     "static/media/CASASIRLEI916.webm": "./static/media/CASASIRLEI916.867f7678009dc848a5e7.webm",
@@ -121,10 +121,10 @@
     "index.html": "./index.html",
     "static/media/slick.woff": "./static/media/slick.295183786cd8a1389865.woff",
     "main.8be190c2.css.map": "./static/css/main.8be190c2.css.map",
-    "main.9a560049.js.map": "./static/js/main.9a560049.js.map"
+    "main.7e7ccae2.js.map": "./static/js/main.7e7ccae2.js.map"
   },
   "entrypoints": [
     "static/css/main.8be190c2.css",
-    "static/js/main.9a560049.js"
+    "static/js/main.7e7ccae2.js"
   ]
 }
